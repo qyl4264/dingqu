@@ -1,0 +1,90 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title>Our Love Story</title>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<style type="text/css">
+		@font-face {
+			font-family: digit;
+			src: url('digital-7_mono.ttf') format("truetype");
+		}
+	</style>
+	<link href="css/default.css" type="text/css" rel="stylesheet">
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/garden.js"></script>
+    <script type="text/javascript" src="js/functions.js"></script>
+</head>
+
+<body>
+	<div id="mainDiv">
+		<div id="content">
+			<div id="code">
+                            <p>秋霞：</br></p>
+                            <span class='space'>生日快乐。</span>
+                            <span class="space"><p>思前想后，还是觉得弄个网页给你看，作为生日礼物最合适，毕竟也算是符合自己工作的，做起来也得心应手，而且独一无二，希望你看后不会嫌弃(当然，你要是嫌弃的话，你也没办法，嘿嘿)。</p></span>
+                            <span class="space"><p>咱们之间，确实有缘分，17年的时候，就有了联系，当时只是点到为止，谁也没有想要更深层次的了解。今年年初，我主动再次迈出了那一步，幸运的是，你也在积极的回应。20200201，这是咱们的幸运日。</p</span>
+                            <span class="space"><p>
+                                年纪小时候，我以为我的爱情，也是那种滚滚红尘，策马奔腾，风花雪月的，就像大话西游里面的爱你一万年，轰轰烈烈。后来，逐渐长大，自己变宅，也不想去交女友，这个想法，也就随之冷淡，直到遇到你，我才发现，我对爱情的那股向往，还存在。
+                            </p></span>
+                            <span class="space"><p>
+                                至此，咱们已经经过了8个多月的幸福美好，这期间，我们各自为了彼此，付出了很多，也收获了许多，经历过吵架的低谷，也经历过陪伴的甜蜜，这些都是生活的调味剂，有了这些，咱们的经历，不会平淡，感情有了这些，才叫充实。
+                            </p></span>
+                            <span class="space"><p>
+                                今天是你的生日，前面25年没有我的陪伴，后面的日子，我希望咱们能够一起度过，好好吃，好好玩，好好生活。Love你，赶紧来宁津，哈哈。
+                            </p></span>
+			</div>
+			<div id="loveHeart">
+				<canvas id="garden"></canvas>
+				<div id="words">
+					<div id="messages">
+						My Qiuxia, I have fallen in love with you for
+						<div id="elapseClock"></div>
+					</div>
+					<div id="loveu">
+						Love u forever and ever.<br/>
+						<div class="signature">- liang</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		var offsetX = $("#loveHeart").width() / 2;
+		var offsetY = $("#loveHeart").height() / 2 - 55;
+		var together = new Date();
+		together.setFullYear(2020, 1, 1);
+                <!--together.setMonth(10)-->
+                <!--together.setDate(1)-->
+		together.setHours(0);
+		together.setMinutes(0);
+		together.setSeconds(0);
+		together.setMilliseconds(0);
+                console.log(together)
+		
+		if (!document.createElement('canvas').getContext) {
+			var msg = document.createElement("div");
+			msg.id = "errorMsg";
+			msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+"; 
+			document.body.appendChild(msg);
+			$("#code").css("display", "none")
+			$("#copyright").css("position", "absolute");
+			$("#copyright").css("bottom", "10px");
+		    document.execCommand("stop");
+		} else {
+			setTimeout(function () {
+				startHeartAnimation();
+			}, 5000);
+
+			timeElapse(together);
+			setInterval(function () {
+				timeElapse(together);
+			}, 500);
+
+			adjustCodePosition();
+			$("#code").typewriter();
+		}
+	</script>
+    <audio id="bgMusic" src="media/MyJinji.mp3" autoplay preload loop="loop"></audio>
+
+</body>
+</html>
